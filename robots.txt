@@ -1,9 +1,16 @@
-User-agent: \*
+# just google search:
+User-agent: googlebot
+
+# for everyone
+User-agent: *
 Disallow: /blog/
 Disallow: /assets/
 Disallow: /buttons/
 Disallow: /gallery/
 Disallow: /dragons-den/playground/
-Disallow: /butlerian-jihad/
+Disallow: /butlerian-jihad/ # to get crawlers ignoring this file stuck
 Crawl-delay: 120
-Visit-time: 0200-0300
+Visit-time: 0200-0400
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+Sitemap: https://fantasydragon.xyz/sitemap.xml

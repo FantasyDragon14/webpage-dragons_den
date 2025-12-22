@@ -1,4 +1,4 @@
-# Welcome to the code behind my webpage!
+# Welcome to the code behind my webpage
 
 here be dragons
 

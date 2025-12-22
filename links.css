@@ -147,9 +147,11 @@ a:hover {
   text-decoration: underline;
   color: aqua;
 }
+
 a:active {
   color: white;
 }
+
 a:visited {
   color: rgb(166, 0, 255);
 }
