@@ -2,117 +2,117 @@
 
 <!--remember to update for each blog post!-->
 
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom">
 
-  <channel>
+	<channel>
 
-    <title>The Dragons Blog</title>
+		<title>The Dragons Blog</title>
 
-    <link>https://fantasydragon.xyz/blog/</link>
+		<link>https://fantasydragon.xyz/blog/</link>
 
-    <atom:link href="https://fantasydragon.xyz/blog/rss.xml" rel="self"
-      type="application/rss+xml" />
+		<atom:link href="https://fantasydragon.xyz/blog/rss.xml" rel="self" type="application/rss+xml" />
 
-    <description>FantasyDragon14's blog. Here's gonna be updates to my projects (mostly my
+		<description>FantasyDragon14's blog. Here's gonna be updates to my projects (mostly my
       personalweb projects i guess).
       Will update every time i remember and am on my PC to do something about it, probably</description>
 
-    <language>en-us</language>
+		<language>en-us</language>
 
-    <lastBuildDate>
+		<lastBuildDate>
 
-      <!--get
+			<!--get
       build date from timestampgenerator: RFC 2822 - https://timestampgenerator.com/)--> Fri, 27 Sep 2024 09:50:04 +0000
-    </lastBuildDate>
+		</lastBuildDate>
 
-    <!--get
+		<!--get
     timestamp from timestampgenerator: - https://timestampgenerator.com/)-->
 
-    <ttl> 1727430604 </ttl>
+		<ttl> 1727430604 </ttl>
 
-    <item>
-      <title>example</title>
-      <link> https://fantasydragon.xyz/blog/000_blog_template.html </link>
-      <description>
+		<item>
+			<title>example</title>
+			<link> https://fantasydragon.xyz/blog/000_blog_template.html </link>
+			<description>
 
-      </description>
-      <pubDate></pubDate>
-      <guid>https://fantasydragon.xyz/blog/000_blog_template.html</guid>
-    </item>
+			</description>
+			<pubDate></pubDate>
+			<guid>https://fantasydragon.xyz/blog/000_blog_template.html</guid>
+		</item>
 
-    <item>
+		<item>
 
-      <!--(Blog
+			<!--(Blog
       Post Title)-->
 
-      <title> blog Introduction </title>
+			<title> blog Introduction </title>
 
-      <!--(Ex.
+			<!--(Ex.
       https://(Website Title)/blog/blogpost.html)-->
 
-      <link> https://fantasydragon.xyz/blog/001_blog_introduction.html </link>
+			<link> https://fantasydragon.xyz/blog/001_blog_introduction.html </link>
 
-      <!--(Copy
+			<!--(Copy
       and paste the html down there)-->
 
-      <description><![CDATA[
+			<description><![CDATA[
 
 
 
-           Just figuring out how this is gonna go
+          Just figuring out how this is gonna go
 
 
 
 
 
-        ]]> </description>
+        ]]>			</description>
 
-      <!--(Date
+			<!--(Date
       Blog Published - RFC 2822 - https://timestampgenerator.com/) (Ex. Thu, 11 Jan 2024 17:43:33
       +0000)-->
 
-      <pubDate>Mon, 09 Sep 2024 09:05:17 +0000</pubDate>
+			<pubDate>Mon, 09 Sep 2024 09:05:17 +0000</pubDate>
 
-      <!--(Link
+			<!--(Link
       back to the page) (Ex. https://fantasydragon.xyz/blog/blogpost.html)-->
 
-      <guid>https://fantasydragon.xyz/blog/001_blog_introduction.html </guid>
-    </item>
+			<guid>https://fantasydragon.xyz/blog/001_blog_introduction.html </guid>
+		</item>
 
-    <item>
-      <title> my reading recommendations</title>
-      <link>https://fantasydragon.xyz/blog/002_reading.html</link>
-      <description>a list of what I'm reading right now/what i recommend you could read</description>
-      <pubDate>Thu, 11 Sep 2024 08:13:53 +0000</pubDate>
-      <guid>https://fantasydragon.xyz/blog/002_reading.html</guid>
-    </item>
+		<item>
+			<title> my reading recommendations</title>
+			<link>https://fantasydragon.xyz/blog/002_reading.html</link>
+			<description>a list of what I'm reading right now/what i recommend you could read</description>
+			<pubDate>Thu, 11 Sep 2024 08:13:53 +0000</pubDate>
+			<guid>https://fantasydragon.xyz/blog/002_reading.html</guid>
+		</item>
 
-    <item>
-      <title> I made a VSCode Extension!</title>
-      <link>https://fantasydragon.xyz/blog/003_vscode_extension_dev.html</link>
-      <description>a blog post about my experience coding an extension for VSCode</description>
-      <pubDate>Thu, 19 Sep 2024 08:13:53 +0000</pubDate>
-      <guid>https://fantasydragon.xyz/blog/003_vscode_extension_dev.html</guid>
-    </item>
+		<item>
+			<title> I made a VSCode Extension!</title>
+			<link>https://fantasydragon.xyz/blog/003_vscode_extension_dev.html</link>
+			<description>a blog post about my experience coding an extension for VSCode</description>
+			<pubDate>Thu, 19 Sep 2024 08:13:53 +0000</pubDate>
+			<guid>https://fantasydragon.xyz/blog/003_vscode_extension_dev.html</guid>
+		</item>
 
-    <item>
-      <title> RSS works now, properly</title>
-      <link>https://fantasydragon.xyz/blog/004_rss_update.html</link>
-      <description>talk about rss and future plans</description>
-      <pubDate>Fri, 20 Sep 2024 08:22:46 +0000</pubDate>
-      <guid>https://fantasydragon.xyz/blog/004_rss_update.html</guid>
-    </item>
+		<item>
+			<title> RSS works now, properly</title>
+			<link>https://fantasydragon.xyz/blog/004_rss_update.html</link>
+			<description>talk about rss and future plans</description>
+			<pubDate>Fri, 20 Sep 2024 08:22:46 +0000</pubDate>
+			<guid>https://fantasydragon.xyz/blog/004_rss_update.html</guid>
+		</item>
 
-    <item>
-      <title>css animation and backgrounds</title>
-      <link> https://fantasydragon.xyz/blog/005_backgrounds_and_animation.html </link>
-      <description>
+		<item>
+			<title>css animation and backgrounds</title>
+			<link> https://fantasydragon.xyz/blog/005_backgrounds_and_animation.html </link>
+			<description>
         me talking about how css animation is fun and confusing
-      </description>
-      <pubDate>Fri, 27 Sep 2024 09:39:15 +0000</pubDate>
-      <guid>https://fantasydragon.xyz/blog/005_backgrounds_and_animation.html</guid>
-    </item>
+			</description>
+			<pubDate>Fri, 27 Sep 2024 09:39:15 +0000</pubDate>
+			<guid>https://fantasydragon.xyz/blog/005_backgrounds_and_animation.html</guid>
+		</item>
 
-  </channel>
+	</channel>
 
 </rss>

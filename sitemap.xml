@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8">
 <urlset xmlns="http://www/sitemaps.org/shemas/sitemaps/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <url>
-    <loc>https://fantasydragon.xyz/hub</loc>
-    <priority>0.7</priority>
-    <lastmod>2025-10-01T13:00:00+00:00</lastmod>
-  </url>
+	<url>
+		<loc>https://fantasydragon.xyz/hub</loc>
+		<priority>0.7</priority>
+		<lastmod>2025-10-01T13:00:00+00:00</lastmod>
+	</url>
 
-  <url>
-    <loc>https://fantasydragon.xyz/about-page</loc>
-  </url>
+	<url>
+		<loc>https://fantasydragon.xyz/about-page</loc>
+	</url>
 
-  <url>
-    <loc>https://fantasydragon.xyz/about-me</loc>
-  </url>
+	<url>
+		<loc>https://fantasydragon.xyz/about-me</loc>
+	</url>
 
-  <url>
-    <loc>https://fantasydragon.xyz/links</loc>
-  </url>
+	<url>
+		<loc>https://fantasydragon.xyz/links</loc>
+	</url>
 
-  <url>
-    <loc>https://fantasydragon.xyz/</loc>
-  </url>
+	<url>
+		<loc>https://fantasydragon.xyz/</loc>
+	</url>

@@ -6,9 +6,8 @@
   --default_bg_img: url('https://sadhost.neocities.org/images/tiles/purplesky.gif');
 
   --max_width: 800px
-
-  /* colors */
-  --color_text: #320648;
+    /* colors */
+    --color_text: #320648;
   --color_borders: #320648;
   --color_bg: #00737dc7;
 }
@@ -77,6 +76,7 @@ body {
 a {
   color: aqua;
 }
+
 a:hover {
   color: purple;
   text-decoration: underline;
@@ -102,7 +102,7 @@ main {
 
 aside {
 
-  background-color:var(--color_bg);
+  background-color: var(--color_bg);
 
   width: 200px;
 
@@ -118,6 +118,7 @@ aside {
   #flex {
     flex-wrap: wrap;
   }
+
   aside {
     width: 100%;
   }
