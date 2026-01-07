@@ -139,11 +139,17 @@ body {
 	opacity: 1;
 }
 
-/* .center {
-	flex: auto;
-	align-self: center;
-	margin: auto;
-} */
+.webrings {
+	>* {
+		position: absolute;
+	}
+}
+
+@media (max-width: 1100px) {
+	.webrings {
+		display: none;
+	}
+}
 
 .middle {
 	display: flex;
@@ -167,6 +173,7 @@ body {
 
 	& .right {
 		flex: 1 1 auto;
+
 	}
 }
 
