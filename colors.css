@@ -1,7 +1,6 @@
 :root {
-  /* variables: */
-
   /* colors */
+  --color_teal: teal;
   --color_cyan: #00ffbf;
   --color_purple: #aa00ff;
   --color_darkpurple: #420063;

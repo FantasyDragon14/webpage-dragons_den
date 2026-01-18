@@ -1,38 +1,41 @@
-let webdragonsMembershipStatus;
-let webdragonsWidget;
-let serverURL;
-let ringMemberId;
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
 
-addEventListener("DOMContentLoaded", async (event) => {
-webdragonsWidget = document.querySelector('.webdragons-wrapper');
-serverURL = webdragonsWidget.getAttribute('url');
-ringMemberId = Number(webdragonsWidget.getAttribute('webdragonID'));
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Primary Meta Tags -->
+		<title>Template Title</title>
+		<meta name="title" content="Template Title" />
+		<meta name="description" content="Template Description" />
 
-const style = document.createElement("style");
-style.textContent = "@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');";
-document.querySelector("head").appendChild(style);
-const response = await fetch(serverURL, {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify({ load: "widget" })
-});
-const htmlComment = await response.text();
-const uncommentedHtml = htmlComment.slice(4, -3);
-const shadow = webdragonsWidget.attachShadow({mode: "open"});
-shadow.innerHTML += uncommentedHtml;
-const response2 = await fetch(serverURL, {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify({ load: "script" })
-});
-const scriptData = await response2.text();
-const script = document.createElement("script");
-script.textContent = scriptData;
-document.body.appendChild(script);
-webdragonsMembershipStatus = document.getElementById("webdragonsMembershipStatus");
-loadWidgetData();
-})
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://fantasydragon.xyz/test-template.html" />
+		<meta property="og:title" content="Template Title" />
+		<meta property="og:description" content="Template Description" />
+		<!-- <meta property="og:image" content="https://fantasydragon.xyz/assets/embeds/template-embed.gif" /> -->
+
+		<meta content="#00ffff" data-react-helmet="true" name="theme-color" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="ttps://fantasydragon.xyz/test-template.html" />
+		<meta property="twitter:title" content="Template Title" />
+		<meta property="twitter:description" content="Template Description" />
+		<!-- <meta property="twitter:image" content="https://fantasydragon.xyz/assets/embeds/template-embed.gif" /> -->
+
+		<link href="template.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/assets/favicons/template-favicon.png" rel="icon" type="image/png" />
+	</head>
+	<body>
+		<a class="construction" style="margin-top: 20px" href="https://github.com/users/FantasyDragon14/projects/2">
+			<img src="/assets/under_construction.gif" alt="an under construction banner" />
+		</a>
+		<p>template text</p>
+		<details>
+			<summary>Epcot Center</summary>
+			<p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+		</details>
+	</body>
+</html>

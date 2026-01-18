@@ -23,7 +23,7 @@ body {
 }
 
 #bg-container {
-	z-index: -1;
+	z-index: -10;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -52,6 +52,7 @@ body {
 }
 
 /* starting with the button carousel */
+/* web_buttons is the container. Then we have two identical ul (one hidden from screenreaders) to make seamless scroll possible */
 .web_buttons {
 	margin: 0px auto 50px;
 	padding: 20px 0px;
@@ -64,24 +65,29 @@ body {
 	} */
 	image-rendering: pixelated;
 
-	&:hover ul {
+	>ul {
+		display: flex;
+		gap: 50px;
+		/* Add padding to the right to create a gap between the last and first card. */
+		padding-left: 50px;
+
+		list-style-type: none;
+		will-change: transform;
+		/* We should be nice to the browser - let it know what we're going to animate. */
+		animation: websites_scroll 30s linear infinite;
+	}
+
+	&:hover>ul {
 		animation-play-state: paused;
 	}
 }
 
-.web_buttons ul {
-	display: flex;
-	gap: 50px;
-	/* Add padding to the right to create a gap between the last and first card. */
-	padding-left: 50px;
+.web_button {
+	image-rendering: pixelated;
+	transition: transform .2s;
 
-	list-style-type: none;
-	will-change: transform;
-	/* We should be nice to the browser - let it know what we're going to animate. */
-	animation: websites_scroll 30s linear infinite;
-}
 
-.web_buttons li {
+
 	width: 200px;
 	height: 100px;
 	color: white;
@@ -100,16 +106,33 @@ body {
 		z-index: 10;
 		position: absolute;
 		top: 50px;
+
+		>p {
+			color: var(--color_darkpurple);
+			top: 0px;
+			z-index: -1;
+			background: none !important;
+			margin: 0% !important;
+			white-space: nowrap;
+			position: absolute;
+			/* text-shadow: 2px 2px 2px #000; */
+			pointer-events: none;
+			font-size: 12px !important;
+			opacity: 0%;
+			font-weight: 400;
+		}
 	}
-}
 
-.web_button {
-	image-rendering: pixelated;
-	transition: transform .2s;
-
-	/* Animation */
+	/* Scale up on hover */
 	&:hover {
 		transform: scale(1.5);
+
+		>a>p {
+			z-index: 100;
+			transform: translate(0px, -50px);
+			transition: all 0.2s ease-in-out;
+			opacity: 100%;
+		}
 	}
 }
 
@@ -123,35 +146,11 @@ body {
 	}
 }
 
-.hover-text {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
-.web_button:hover .hover-text {
-	opacity: 1;
-}
-
-.webrings {
-	>* {
-		position: relative;
-	}
-}
-
-/* @media (max-width: 1100px) {
-	.webrings {
-		display: none;
-	}
-} */
-
 .middle {
 	display: flex;
 
 	& * {
-		z-index: 1;
+		z-index: 3;
 	}
 
 	& .left,
@@ -325,7 +324,7 @@ body {
 	>.ground {
 		display: flex;
 
-		z-index: 0;
+		z-index: -1;
 		position: absolute;
 		height: 1024px;
 		width: 100%;
@@ -358,6 +357,43 @@ body {
 
 
 	}
+
+	>.bottom {
+		display: flex;
+
+		z-index: -2;
+		position: absolute;
+		height: 512px;
+		width: 100%;
+		/* top: calc(256+512-128)px; */
+		top: 640px;
+		overflow: hidden;
+
+		>* {
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			flex: auto auto 1;
+			width: 100%;
+			height: 100%;
+		}
+
+		& * {
+			z-index: inherit;
+		}
+
+		& .left {
+			background: linear-gradient(to bottom left, rgb(132, 132, 132) 0%, rgb(132, 132, 132) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		& .middle {
+			background-color: rgb(132, 132, 132);
+		}
+
+		& .right {
+			background: linear-gradient(to bottom right, rgb(132, 132, 132) 0%, rgb(132, 132, 132) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+		}
+	}
+
 }
 
 @media (max-width: 1792px) {
@@ -387,25 +423,25 @@ body {
 	z-index: 11;
 	position: relative;
 	background-repeat: no-repeat;
-	background-image: url(/assets/hub/dragonpet/fantasydragon-sleeping.gif);
+	background-image: url(/assets/dragonpet/fantasydragon-sleeping.gif);
 	background-size: 100%;
 	width: 512px;
 	height: 512px;
 
 	&:hover {
 		cursor: grab;
-		background-image: url(/assets/hub/dragonpet/fantasydragon-attention.gif);
+		background-image: url(/assets/dragonpet/fantasydragon-attention.gif);
 	}
 
 	&:active {
 		cursor: grabbing;
-		background-image: url(/assets/hub/dragonpet/fantasydragon-petted.gif );
+		background-image: url(/assets/dragonpet/fantasydragon-petted.gif );
 	}
 }
 
 /* @media (pointer:coarse) {
 	#dragon_sleep:hover {
-		background-image: url(/assets/hub/dragonpet/fantasydragon-petted.gif );
+		background-image: url(/assets/dragonpet/fantasydragon-petted.gif );
 	}
 } */
 
@@ -424,14 +460,50 @@ body {
 	}
 }
 
+/* the webring dock area */
+.docks {
+	display: flex;
+	flex-direction: row;
+	min-height: 512px;
+
+	>.cargoarea {
+		margin: 10px;
+		background-repeat: repeat-y;
+	}
+}
+
+@media (max-width: 768px) {
+	.docks .cargoarea {
+		display: none
+	}
+}
+
+.webrings {
+	display: flex;
+	flex-direction: column;
+
+	>.ship {
+		>img {
+			height: 200px;
+		}
+	}
+}
+
 
 footer {
+	z-index: 10;
+
+	& * {
+		z-index: inherit;
+	}
+
 	border-top: 2px solid #085052;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	padding: 5px;
-	background: url(/assets/backgrounds/stonewall.png), #e1e4bca2;
+	background: url(/assets/backgrounds/stonewall.png),
+	#e1e4bca2;
 	background-size: auto 100%;
 
 	>* {

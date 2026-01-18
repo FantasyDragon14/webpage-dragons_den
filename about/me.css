@@ -1,0 +1,10 @@
+@import url(/colors.css);
+
+@font-face {
+  font-family: minecraft_seven_v2;
+  src: url(/assets/fonts/Minecraft-Seven_v2.ttf);
+}
+
+body {
+  font-family: minecraft_seven_v2;
+}

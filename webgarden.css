@@ -1,14 +1,6 @@
+@import url(colors.css);
+
 @media (width: 250px) and (height: 250px) {
-	:root {
-		/* variables: */
-
-		/* colors */
-		--color_cyan: #00ffbf;
-		--color_purple: #aa00ff;
-		--color_darkpurple: #420063;
-		--color_menu_bg: rgba(28, 141, 169, 0.539);
-
-	}
 
 	html,
 	body,
@@ -95,19 +87,19 @@
 				>#dragon_sleep {
 					z-index: 11;
 					background-repeat: no-repeat;
-					background-image: url(/assets/hub/dragonpet/fantasydragon-sleeping.gif);
+					background-image: url(/assets/dragonpet/fantasydragon-sleeping.gif);
 					background-size: 100%;
 					width: 250px;
 					height: 250px;
 
 					&:hover {
 						cursor: grab;
-						background-image: url(/assets/hub/dragonpet/fantasydragon-attention.gif);
+						background-image: url(/assets/dragonpet/fantasydragon-attention.gif);
 					}
 
 					&:active {
 						cursor: grabbing;
-						background-image: url(/assets/hub/dragonpet/fantasydragon-petted.gif );
+						background-image: url(/assets/dragonpet/fantasydragon-petted.gif );
 					}
 
 				}

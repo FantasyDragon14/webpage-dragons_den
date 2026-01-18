@@ -1,0 +1,60 @@
+@import url(/colors.css);
+
+@font-face {
+  font-family: minecraft_seven_v2;
+  src: url(/assets/fonts/Minecraft-Seven_v2.ttf);
+}
+
+body {
+  font-family: minecraft_seven_v2;
+}
+
+
+.web_buttons {
+  image-rendering: pixelated;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  margin: auto auto 50px;
+  width: calc(100% - 68px);
+
+  >a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 31px;
+    width: 88px;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    font-style: normal;
+
+    >p {
+      color: var(--color_darkpurple);
+      z-index: -1;
+      background: none !important;
+      margin: 0% !important;
+      white-space: nowrap;
+      position: absolute;
+      /* text-shadow: 2px 2px 2px #000; */
+      pointer-events: none;
+      font-size: 12px !important;
+      opacity: 0%;
+      font-weight: 400;
+    }
+
+    &:hover {
+      filter: none;
+      transform: scale(2);
+      z-index: 9999;
+
+      >p {
+        transform: translate(0px, 24px);
+        transition: all 0.2s ease-in-out;
+        opacity: 100%;
+      }
+    }
+  }
+}
