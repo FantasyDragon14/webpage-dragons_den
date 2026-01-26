@@ -1,33 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <!-- just a testing questionaire.  -->
 <html>
-	<head>
-		<meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<title>Answer the Questions...</title>
+    <title>Answer the Questions...</title>
 
-		<link href="/hub.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="/assets/favicons/favicon-den.png" rel="icon" type="image/png" />
-	</head>
+    <link href="/hub.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/favicons/favicon-den.png" rel="icon" type="image/png" />
+    <style>
+      nav {
+        position: sticky;
+        margin: 10px;
+        margin-top: 20px;
+        > a {
+          padding: 10px;
+          cursor: pointer;
+          overflow: hidden;
+          white-space: nowrap;
+          user-select: none;
+          background: var(--color_cyan);
+          color: var(--color_darkpurple);
+          border: 2px solid var(--color_darkpurple);
+          align-content: center;
+          text-decoration: none;
 
-	<body style="height: 100vh">
-		<div id="bg-container">
-			<ul>
-				<li style="height: 100%; margin-top: 300px"></li>
-				<!-- removes the damn gap/repeat at the bottom of the page by filling it with white -->
-				<li style="background: url(/assets/backgrounds/clouds/1.png); animation-duration: 60s"></li>
-				<li style="background: url(/assets/backgrounds/clouds/2.png); animation-duration: 40s"></li>
-				<li style="background: url(/assets/backgrounds/clouds/3.png); animation-duration: 20s"></li>
-				<li style="background: url(/assets/backgrounds/clouds/4.png); animation-duration: 10s"></li>
-			</ul>
-		</div>
+          &:hover {
+            background-color: var(--color_cyan);
+            font-weight: bold;
+            /* color: var(--color_cyan); */
+            /* text-shadow: 2px 2px #ffffffcc; */
+            /* color: #85ffeb; */
+            box-shadow:
+              rgba(240, 46, 170, 0.4) 1px 1px,
+              rgba(240, 46, 170, 0.4) 1px 1px inset,
+              rgba(240, 46, 170, 0.3) 3px 3px,
+              rgba(240, 46, 170, 0.3) 3px 3px inset,
+              rgba(240, 46, 170, 0.2) 5px 5px,
+              rgba(240, 46, 170, 0.1) 8px 8px,
+              rgba(240, 46, 170, 0.05) 10px 10px;
+          }
 
-		<nav style="text-align: left"><a href="/hub.html">back to hub</a></nav>
-		<h1>Wanna answer some questions for me?</h1>
-		<p><iframe src="https://cloud.fantasydragon.xyz/index.php/apps/forms/embed/TxjwF7HT5kNX2feJ3FJYwSp8" width="750" height="900"></iframe></p>
-	</body>
+          &:active {
+            color: var(--color_purple);
+            /* box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5; */
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body style="height: 100vh; margin: 5px">
+    <div id="bg-container">
+      <ul>
+        <li style="height: 100%; margin-top: 300px"></li>
+        <!-- removes the damn gap/repeat at the bottom of the page by filling it with white -->
+        <li
+          style="
+            background: url(/assets/backgrounds/clouds/1.png);
+            animation-duration: 60s;
+          "
+        ></li>
+        <li
+          style="
+            background: url(/assets/backgrounds/clouds/2.png);
+            animation-duration: 40s;
+          "
+        ></li>
+        <li
+          style="
+            background: url(/assets/backgrounds/clouds/3.png);
+            animation-duration: 20s;
+          "
+        ></li>
+        <li
+          style="
+            background: url(/assets/backgrounds/clouds/4.png);
+            animation-duration: 10s;
+          "
+        ></li>
+      </ul>
+    </div>
+
+    <nav style="text-align: left"><a href="/hub.html">back to hub</a></nav>
+    <h1 style="text-align: center">Wanna answer some questions for me?</h1>
+    <div style="display: flex">
+      <iframe
+        src="https://cloud.fantasydragon.xyz/index.php/apps/forms/embed/TxjwF7HT5kNX2feJ3FJYwSp8"
+        width="800"
+        height="1600"
+        style="margin: 0 auto"
+      ></iframe>
+    </div>
+    <p>This is just a test, but i still read every answer ;3</p>
+  </body>
 </html>
-d

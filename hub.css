@@ -86,48 +86,47 @@ body {
 	image-rendering: pixelated;
 	transition: transform .2s;
 
-
-
 	width: 200px;
 	height: 100px;
-	color: white;
-
-	/* the flyer */
-	& img {
-		position: relative;
-		top: 0;
-		left: 0;
-	}
 
 	/* the banner/button */
-	& a {
+	> :nth-child(1) {
 		height: 31px;
 		width: 88px;
 		z-index: 10;
 		position: absolute;
 		top: 50px;
 
-		>p {
-			color: var(--color_darkpurple);
-			top: 0px;
-			z-index: -1;
-			background: none !important;
-			margin: 0% !important;
-			white-space: nowrap;
-			position: absolute;
-			/* text-shadow: 2px 2px 2px #000; */
-			pointer-events: none;
-			font-size: 12px !important;
-			opacity: 0%;
-			font-weight: 400;
-		}
+	}
+
+	/* The Name/whatever text */
+	> :nth-child(2) {
+		color: var(--color_darkpurple);
+		z-index: -1;
+		background: none !important;
+		margin: 0% !important;
+		white-space: nowrap;
+		position: absolute;
+		/* text-shadow: 2px 2px 2px #000; */
+		pointer-events: none;
+		font-size: 12px !important;
+		opacity: 0%;
+		font-weight: 400;
+		top: 50px;
+	}
+
+	/* the flyer */
+	> :nth-child(3) {
+		position: relative;
+		top: 0;
+		left: 0;
 	}
 
 	/* Scale up on hover */
 	&:hover {
 		transform: scale(1.5);
 
-		>a>p {
+		> :nth-child(2) {
 			z-index: 100;
 			transform: translate(0px, -50px);
 			transition: all 0.2s ease-in-out;
@@ -301,112 +300,95 @@ body {
 
 .island {
 	width: 100%;
+	max-width: 2000px;
 	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+	margin: 0 auto;
 	/* margin-top: 20px; */
 	position: relative;
 	top: -100px;
 	padding-top: 100px;
 	min-height: 300px;
 	display: flex;
-	/* flex-direction: row; */
-	/* justify-content: space-evenly; */
-	/* align-items: center; */
-	/* background-image:
-		url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ l\ 1.png),
-		url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ 1.png),
-		url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ r\ 1.png); */
-	/* background-position: 2px; */
-	/* background-size: 50%; */
-	/* background-size: cover;
-	background-position-x: center; */
 
-	>.ground {
+	>.ground,
+	>.bottom {
 		display: flex;
-
-		z-index: -1;
 		position: absolute;
-		height: 1024px;
+		justify-content: center;
+		height: 768px;
 		width: 100%;
-		top: -256px;
 
 		>* {
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
 			flex: auto auto 1;
-			width: 100%;
+			width: 512px;
 			height: 100%;
 		}
 
 		& * {
 			z-index: inherit;
 		}
+	}
 
+	>.ground {
+		z-index: -1;
+		top: 0px;
 
 		& .left {
-			background-image: url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ l\ 1.png);
+			background-image: url(/assets/backgrounds/ground/Island-top-left.png);
 		}
 
 		& .middle {
-			background-image: url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ 1.png);
+			background-image: url(/assets/backgrounds/ground/Island-top-middle.png);
 		}
 
 		& .right {
-			background-image: url(/assets/backgrounds/ground/2026-01-07\ Island-Floor\ r\ 1.png);
+			background-image: url(/assets/backgrounds/ground/Island-top-right.png);
 		}
-
-
 	}
 
 	>.bottom {
-		display: flex;
-
 		z-index: -2;
-		position: absolute;
-		height: 512px;
-		width: 100%;
-		/* top: calc(256+512-128)px; */
-		top: 640px;
-		overflow: hidden;
-
-		>* {
-			background-repeat: no-repeat;
-			background-size: 100% 100%;
-			flex: auto auto 1;
-			width: 100%;
-			height: 100%;
-		}
-
-		& * {
-			z-index: inherit;
-		}
+		top: 512px;
 
 		& .left {
-			background: linear-gradient(to bottom left, rgb(132, 132, 132) 0%, rgb(132, 132, 132) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+			background-image: url(/assets/backgrounds/ground/Island-bottom-left.png);
 		}
 
 		& .middle {
-			background-color: rgb(132, 132, 132);
+			background-image: url(/assets/backgrounds/ground/Island-bottom-middle.png);
 		}
 
 		& .right {
-			background: linear-gradient(to bottom right, rgb(132, 132, 132) 0%, rgb(132, 132, 132) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+			background-image: url(/assets/backgrounds/ground/Island-bottom-right.png);
 		}
 	}
-
 }
 
 @media (max-width: 1792px) {
-	.island .ground .middle:nth-of-type(2) {
+
+	.island .ground .middle:nth-of-type(2),
+	.island .bottom .middle:nth-of-type(2) {
 		display: none;
 	}
 }
 
 @media (max-width: 1024px) {
 
+	.island .ground,
+	.island .bottom {
+		>* {
+			width: 100%;
+		}
+	}
+
 	.island .ground .left,
-	.island .ground .right {
+	.island .ground .right,
+	.island .bottom .left,
+	.island .bottom .right {
 		display: none;
+
 	}
 }
 
@@ -465,30 +447,151 @@ body {
 	display: flex;
 	flex-direction: row;
 	min-height: 512px;
+	width: fit-content;
+	margin: 0 auto;
 
 	>.cargoarea {
-		margin: 10px;
-		background-repeat: repeat-y;
+		position: relative;
+		margin: 64px 0px 24px;
+		/* background-repeat: repeat-y; */
+		width: 200px;
+
+		>.pier {
+			z-index: 1;
+			position: absolute;
+			width: 300px;
+			height: 100%;
+			left: -64px;
+			background-image: url(/assets/backgrounds/ground/wood_planks.jpg);
+			background-size: 100% 100px;
+
+		}
 	}
 }
 
-@media (max-width: 768px) {
-	.docks .cargoarea {
-		display: none
-	}
+ul {
+	list-style-type: none;
 }
 
 .webrings {
 	display: flex;
 	flex-direction: column;
+	justify-content: right;
+	justify-items: right;
 
 	>.ship {
+		z-index: 10;
+		display: grid;
+		/* justify-content: right; */
+		position: relative;
+		width: fit-content;
+		height: fit-content;
+		margin: 0 0 0 auto;
+
 		>img {
-			height: 200px;
+			z-index: inherit;
+			position: relative;
+		}
+
+		>.webring {
+			z-index: inherit;
+			justify-self: center;
+			position: absolute;
+			margin: 0 auto;
+			width: fit-content;
+			height: fit-content;
+
+			&* {
+				position: inherit
+			}
 		}
 	}
 }
 
+.webrings>[title="webdragons"] {
+	height: 256px;
+
+	>.webring {
+		margin-top: 36px;
+		margin-left: 36px;
+	}
+}
+
+.webrings>[title="nexusring"] {
+	margin-right: 40px;
+
+	& .webring {
+		/* top: 50px; */
+		/* left: 50px; */
+		/* height: 200px; */
+		width: 200px;
+		margin-top: 60px;
+	}
+
+}
+
+.webrings>[title="transing the internet"] {
+	margin-right: 55px;
+
+	& .webring {
+		/* top: 100px; */
+		/* left: 50px; */
+		/* height: 64px; */
+		width: calc(168px+50px);
+		margin-top: 70px;
+	}
+}
+
+/* Stacking */
+.webrings {
+	>.ship:nth-of-type(1) {
+		z-index: 10;
+	}
+
+	>.ship:nth-of-type(3) {
+		z-index: 12;
+	}
+
+	>.ship:nth-of-type(4) {
+		z-index: 13;
+	}
+
+	>.ship:nth-of-type(2) {
+		z-index: 11;
+	}
+}
+
+@media (max-width: 896px) {
+	.docks .cargoarea {
+		display: none
+	}
+
+	.webrings {
+		>.ship {
+			margin: 0 auto;
+		}
+	}
+}
+
+.spiral {
+	--b: 15px;
+	/* border thickness */
+	--s: 300px;
+	/* preferred size shape */
+	--c: #00be9c;
+
+	width: round(var(--s), 4*var(--b));
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background:
+		repeating-radial-gradient(calc(2*var(--b)) at top, #0000 -1px, var(--c) 0 calc(50% - 1px), #0000 50% calc(100% - 1px)) calc(50% + var(--b)) 100%,
+		repeating-radial-gradient(calc(2*var(--b)) at bottom, var(--c) -1px, #0000 0 calc(50% - 1px), var(--c) 50% calc(100% - 1px)) 50% 0;
+	background-size: 150% 50%;
+	background-repeat: no-repeat;
+	mask:
+		radial-gradient(calc(1.5*var(--b)) at calc(100% - var(--b)/2) 0, #0000 calc(100%/3), #000 calc(100%/3 + 1px) 110%, #0000 0) calc(50% + var(--b)/2) 100%/calc(3*var(--b)) 50% exclude no-repeat,
+		conic-gradient(#000 0 0);
+}
 
 footer {
 	z-index: 10;
